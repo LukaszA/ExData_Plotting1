@@ -8,6 +8,7 @@ data$Date <- as.Date(data$Date, "%d/%m/%Y")
 data <- subset(data, data$Date >= '2007-02-01' & data$Date <= "2007-02-02")
 data$Datetime <- as.POSIXct(paste(as.Date(data$Date), data$Time))
 
+Sys.setlocale("LC_TIME", "English")
 
 #chart creation
 with(data, plot(Sub_metering_1~Datetime, type = "l", ylab="Energy sub metering", xlab= ""))

@@ -9,6 +9,8 @@ data <- subset(data, data$Date >= '2007-02-01' & data$Date <= "2007-02-02")
 data$Datetime <- as.POSIXct(paste(as.Date(data$Date), data$Time))
 
 
+Sys.setlocale("LC_TIME", "English")
+
 #chart creation
 par(mfrow=c(2,2), mar=c(4,5,2,2))
 
